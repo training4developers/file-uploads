@@ -1,8 +1,0 @@
-{
-  "name": "File Upload Demonstrations",
-  "description": "File Upload Demonstrations using a HTML5 and Node.js",
-  "repository": "https://github.com/training4developers/file-uploads.git",
-  "logo": "",
-  "keywords": [],
-  "image": "heroku/nodejs"
-}

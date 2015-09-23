@@ -7,9 +7,21 @@ module.exports = function(grunt) {
 			rootFolder: "app/www",
 			uploadsFolder: "app/uploads",
 			childApps: {
-				"appMain": { port: 8080 },
-				"appWebSockets": { port: 8081 },
-				"appSocketIO": { port: 8082 }
+				"appMain": {
+					port: 8080,
+					caption: "home",
+					main: true
+				},
+				"appWebSockets": {
+					port: 8081,
+					caption: "File Uploads with Plain Web Sockets",
+					index: "index_websockets_upload.html"
+				},
+				"appSocketIO": {
+					port: 8082,
+					caption: "File Uploads with Socket.IO using Web Sockets",
+					index: "index_socketio_upload.html"
+				}
 			}
 		}
 	});

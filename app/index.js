@@ -3,10 +3,9 @@ var
 	config = {
 		app: {
 			rootFolder: "app/www",
-			uploadsFolder: "app/uploads",
 			childApps: {
 				"appMain": {
-					port: process.env.PORT || 8080,
+					port: 8080,
 					caption: "home",
 					main: true
 				},
