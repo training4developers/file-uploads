@@ -1,8 +1,11 @@
 (function(window, document) {
 
-	var socket;
+	var socket, statusLog;
 
 	document.addEventListener("DOMContentLoaded", function() {
+
+		statusLog = document.getElementById("status-log");
+		statusLog.innerText += "\n";
 
 		socket = new WebSocket("ws://localhost:8081");
 		socket.addEventListener("open", function() {
@@ -10,7 +13,7 @@
 		});
 
 		socket.addEventListener("message", function(msg) {
-			console.log(msg.data);
+			statusLog.innerText += msg.data + "\n";
 		});
 
 	});
@@ -41,7 +44,7 @@
 				fr = new FileReader();
 
 			fr.addEventListener("loadend", function() {
-				console.log("sending " + fr.result.byteLength + " bytes");
+				statusLog.innerText += "sending " + fr.result.byteLength + " bytes" + "\n";
 				socket.send(fr.result);
 			});
 

@@ -3,14 +3,14 @@ footer {
 }
 
 #drop-zone {
-	float:left;
 	width:200px;
 	height:200px;
 	background-color: white;
 	box-sizing: border-box;
 	border: 2px dashed #999999;
+	text-align:center;
 }
 
-#drop-zone .active {
+#drop-zone.active {
 	border: 3px dashed black;
 }

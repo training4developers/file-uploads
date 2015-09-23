@@ -1,9 +1,16 @@
 (function(document) {
 
-	var socket = io();
+	var socket = io(), statusLog;
 
 	socket.on("upload result", function(result) {
-		console.log(result);
+		statusLog.innerText += result + "\n";
+	});
+
+	document.addEventListener("DOMContentLoaded", function() {
+
+		statusLog = document.getElementById("status-log");
+		statusLog.innerText += "\n";
+
 	});
 
 	document.addEventListener("dragenter", function(e) {
@@ -32,7 +39,7 @@
 				fr = new FileReader();
 
 			fr.addEventListener("loadend", function() {
-				console.log("sending " + fr.result.byteLength + " bytes");
+				statusLog.innerText += "sending " + fr.result.byteLength + " bytes\n";
 				socket.emit("upload file", fr.result);
 			});
 
