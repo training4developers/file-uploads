@@ -5,7 +5,11 @@ var
 			rootFolder: "app/www",
 			uploadsFolder: "app/uploads",
 			childApps: {
-				"appMain": { port: 8080, caption: "home", main: true },
+				"appMain": {
+					port: process.env.PORT || 8080,
+					caption: "home",
+					main: true
+				},
 				"appWebSockets": {
 					port: 8081,
 					caption: "File Uploads with Plain Web Sockets",
