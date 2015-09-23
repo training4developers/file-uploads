@@ -12,7 +12,7 @@ module.exports = function(app) {
 		  });
 
 			socket.on("upload file", function(data) {
-				socket.emit("upload result", "bytes recieved: " + data.length);
+				socket.emit("upload result", "bytes received: " + data.length);
 			});
 
 		});

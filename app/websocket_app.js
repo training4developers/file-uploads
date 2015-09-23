@@ -15,7 +15,7 @@ module.exports = function(app) {
 
 			ws.on("message", function(data) {
 				console.log("ws message");
-				ws.send("byte received: " + data.length);
+				ws.send("bytes received: " + data.length);
 			});
 
 		});
